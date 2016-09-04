@@ -29,13 +29,20 @@ module.exports = {
       // .ts files for TypeScript
       { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'] },
       { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
+      { test: /\.jade$/, loader: "jade" },
+      { test: /\.styl$/, loader: 'css-loader!stylus-loader?paths=node_modules/bootstrap-stylus/stylus/' },
       { test: /\.html$/, loader: 'raw-loader' }
     ]
   },
 
+  stylus: {
+    use: [require('nib')()],
+    import: ['~nib/lib/nib/index.styl']
+  },
+
   resolve: {
     root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js']
+    extensions: ['', '.ts', '.js', '.jade', 'styl']
   },
 
 };
