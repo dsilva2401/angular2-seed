@@ -31,7 +31,8 @@ module.exports = {
       { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
       { test: /\.jade$/, loader: "jade" },
       { test: /\.styl$/, loader: 'css-loader!stylus-loader?paths=node_modules/bootstrap-stylus/stylus/' },
-      { test: /\.html$/, loader: 'raw-loader' }
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.json$/,  loader: 'json' }
     ]
   },
 
